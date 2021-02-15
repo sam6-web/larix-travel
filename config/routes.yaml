@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+dashboard:
+    path: /backoffice
+    controller: App\Controller\Admin\DashboardAdminController::index
+logout:
+    path: /deconnexion

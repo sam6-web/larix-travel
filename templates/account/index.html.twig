@@ -1,0 +1,20 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <h1 class="text-center">Mon compte</h1>
+    {{include('form.html.twig')}}
+    
+    <ul>
+        <li>
+                 <a href="http://localhost:8000/c/{{app.user.cle}}">lien de parrainge</a>
+        </li>
+        <li>
+        Parrainé par: {{parrainage}}
+        </li>
+    </ul>
+
+    <h6> nombre de filleul : {{NbrFilleul}} </h6>
+
+    
+
+{% endblock %}

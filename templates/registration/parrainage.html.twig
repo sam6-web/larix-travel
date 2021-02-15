@@ -1,0 +1,56 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+
+    <h1 class="text-center">parrainage</h1>
+    {# {{include('form.html.twig')}} #}
+
+    <div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<form name="user" method="post" class="login-form">
+			<div class="sign-in-htm">
+				
+				<div class="group">
+                <div><label for="user_username" class="required">Identifiant</label><input type="text" id="user_username" name="user[username]" required="required"></div>
+				</div>
+				<div class="group">
+					{# <input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label> #}
+                    <div><label for="user_email" class="required">Email</label><input type="email" id="user_email" name="user[email]" required="required"></div>
+				</div>
+				<div class="group">
+                    {# <input type="hidden" name="_target_path" value="{{ path('account') }}" />
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+					<input type="submit" class="button" value="Connexion"> #}
+                    <div><label for="user_plainPassword_first" class="required">Mot de passe</label><input type="password" id="user_plainPassword_first" name="user[plainPassword][first]" required="required"></div>
+				</div>
+                <div class="group">
+                    <div><label for="user_plainPassword_second" class="required">Confirmer le mot de passe</label><input type="password" id="user_plainPassword_second" name="user[plainPassword][second]" required="required"></div>
+                </div>
+
+
+				<div class="hr"></div>
+                <div class="group">
+                    <button type="submit" class="button">Valider</button>
+                </div>
+                <input type="hidden" id="user__token" name="user[_token]" value="YwYP6lkduWkoQ4uKteRy0rVzRkfkvrTy5Xve92trlWQ">
+				<div class="foot-lnk">
+					<p>
+                        {# <a href="{{path('request_resetting')}}">Mot de passe oublié ?</a> #}
+                        
+                    </p>
+				</div>
+                 <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 cell">
+                </div>
+			</div>
+			
+
+    
+
+	</div>
+</div>
+    
+{% endblock %}

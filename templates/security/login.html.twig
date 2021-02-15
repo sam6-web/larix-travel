@@ -1,0 +1,130 @@
+{% extends('base.html.twig') %}
+
+
+
+   
+
+
+
+{% block body %}
+
+
+    {# <form action="{{ path('connexion') }}" method="post">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 cell">
+                    {% if error %}
+                        <div class="callout warning">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <label for="username">Identifiant
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                    </label>
+                </div>
+                <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 cell">
+                    <label for="password">Mot de passe:
+                        <input type="password" id="password" name="_password" />
+                    </label>
+                    <p>
+                        <a href="{{path('request_resetting')}}">Mot de passe oublié ?</a>
+                    </p>
+                    
+                </div>
+
+                <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 cell">
+                    <input type="hidden" name="_target_path" value="{{ path('account') }}" />
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+                    <button type="submit" class="button">Connexion</button>
+                </div>
+
+            </div>
+        </div>
+    </form> #}
+
+   {#  </form> #}
+
+
+
+    <div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<form action="{{ path('connexion') }}" method="post" class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					{# <label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input"> #}
+                    {% if error %}
+                        <div class="callout warning">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <label for="username" class="label">Identifiant
+                        <input class="input" type="text" id="username" name="_username" value="{{ last_username }}" />
+                    </label>
+				</div>
+				<div class="group">
+					{# <label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password"> #}
+                     <label for="password" class="label">Mot de passe:
+                        <input class="input" type="password" id="password" name="_password" />
+                    </label>
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+                    <input type="hidden" name="_target_path" value="{{ path('account') }}" />
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+					<input type="submit" class="button" value="Connexion">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<p>
+                        <a href="{{path('request_resetting')}}">Mot de passe oublié ?</a>
+                    </p>
+				</div>
+                 <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 cell">
+                </div>
+			</div>
+			<div class="sign-up-htm">
+				{# <div class="group">
+					<label for="user" class="label" >Username</label>
+					<input id="user" type="text" class="input">
+				</div> #}
+				{# <div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div> #}
+				{# <div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div> #}
+				<div class="hr"></div>
+               <div class="group">
+                 <div class="loader"></div>
+               </div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">L'inscription se fait par parrainage Merci</a>
+				</div>
+			</div>
+            
+
+		</div>
+
+    
+
+	</div>
+</div>
+
+{% endblock %}

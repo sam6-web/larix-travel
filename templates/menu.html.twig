@@ -1,0 +1,30 @@
+<div class="top-bar">
+	<div class="top-bar-right">
+		<ul class="menu">
+			{% if is_granted('ROLE_ADMIN') %}
+				<a href="{{path('backoffice')}}">Espace admin</a>
+			{% endif %}
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				<li class="menu-text">Connecté en tant que: {{ app.user.username }}</li>
+				<li>
+					<a href="{{path(('account'))}}">mon espace</a>
+				</li>
+				<li>
+					<a href="{{path('logout')}}">Sé déconnecter</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="{{path(('connexion'))}}">Connexion</a>
+				</li>
+				{# <li>
+					<a href="{{path('user_registration')}}">Inscription</a>
+				</li> #}
+				
+
+			{% endif %}
+
+
+		</ul>
+</div>
+	</div>
+</div>
